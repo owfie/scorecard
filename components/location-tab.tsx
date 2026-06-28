@@ -177,7 +177,7 @@ export function LocationTab({
           onClick={() => toggleSort(sortKey)}
           title={title}
           className={cn(
-            "inline-flex items-center gap-1 text-xs font-medium tracking-wide uppercase transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none",
+            "inline-flex items-center gap-1 text-xs font-medium tracking-wide transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none",
             active ? "text-foreground" : "text-muted-foreground",
           )}
         >
@@ -223,7 +223,9 @@ export function LocationTab({
                     max={40}
                     step={1}
                     onValueChange={(v) =>
-                      onWeight(c.key, (v as number[])[0] ?? 0)
+                      // base-ui hands pointer interactions a bare number for a
+                      // single-thumb slider, but an array via keyboard — accept both.
+                      onWeight(c.key, typeof v === "number" ? v : (v[0] ?? 0))
                     }
                     aria-label={`Weight: ${c.label}`}
                   />
@@ -298,7 +300,7 @@ export function LocationTab({
                             className="w-24 text-right"
                             onCommit={(v) => onSiteField(index, "rentPerM2", v)}
                           />
-                          <div className="nums mt-0.5 text-[0.7rem] text-muted-foreground">
+                          <div className="nums mt-0.5 text-sm text-muted-foreground">
                             {site.rentPerM2 === 0
                               ? "rent-free"
                               : accounting(site.rentPerM2)}

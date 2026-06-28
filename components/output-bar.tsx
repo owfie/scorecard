@@ -17,7 +17,7 @@ function Stat({
 }) {
   return (
     <div className="flex flex-col gap-1 px-4 py-3.5 sm:px-5">
-      <span className="text-[0.7rem] font-medium tracking-wide text-muted-foreground uppercase">
+      <span className="text-label font-medium tracking-wide text-muted-foreground">
         {label}
       </span>
       <span
@@ -30,7 +30,7 @@ function Stat({
         {value}
       </span>
       {sub && (
-        <span className="nums text-xs text-muted-foreground">{sub}</span>
+        <span className="nums text-label text-muted-foreground">{sub}</span>
       )}
     </div>
   );

@@ -93,7 +93,7 @@ export function EconomicsTab({ inputs, onInput }: EconomicsTabProps) {
                 <div className="flex items-center gap-2">
                   <span
                     className={cn(
-                      "text-xs",
+                      "text-label",
                       inputs.cogsMode === "percent"
                         ? "font-medium text-foreground"
                         : "text-muted-foreground",
@@ -110,7 +110,7 @@ export function EconomicsTab({ inputs, onInput }: EconomicsTabProps) {
                   />
                   <span
                     className={cn(
-                      "text-xs",
+                      "text-label",
                       inputs.cogsMode === "perUnit"
                         ? "font-medium text-foreground"
                         : "text-muted-foreground",
@@ -131,10 +131,10 @@ export function EconomicsTab({ inputs, onInput }: EconomicsTabProps) {
                 <>
                   <div className="flex flex-col gap-3">
                     <div className="flex items-baseline justify-between gap-2">
-                      <span className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+                      <span className="text-label font-semibold tracking-wide text-muted-foreground">
                         Per coffee
                       </span>
-                      <span className="nums text-xs text-muted-foreground">
+                      <span className="nums text-label text-muted-foreground">
                         ${results.coffeeUnitCost.toFixed(2)} / cup ·{" "}
                         <strong className="text-foreground">
                           {percent(results.coffeeCogsPct, 0)}
@@ -154,10 +154,10 @@ export function EconomicsTab({ inputs, onInput }: EconomicsTabProps) {
 
                   <div className="flex flex-col gap-3">
                     <div className="flex items-baseline justify-between gap-2">
-                      <span className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+                      <span className="text-label font-semibold tracking-wide text-muted-foreground">
                         Per food item
                       </span>
-                      <span className="nums text-xs text-muted-foreground">
+                      <span className="nums text-label text-muted-foreground">
                         ${results.foodUnitCost.toFixed(2)} / item ·{" "}
                         <strong className="text-foreground">
                           {percent(results.foodCogsPct, 0)}
@@ -251,8 +251,8 @@ export function EconomicsTab({ inputs, onInput }: EconomicsTabProps) {
 
               <div className="flex items-center justify-between gap-3">
                 <div className="grid gap-0.5">
-                  <Label className="text-sm">Override modelled floor area</Label>
-                  <span className="text-xs text-muted-foreground">
+                  <Label className="text-label">Override modelled floor area</Label>
+                  <span className="text-label text-muted-foreground">
                     Off = sized from seating demand below.
                   </span>
                 </div>
@@ -278,7 +278,7 @@ export function EconomicsTab({ inputs, onInput }: EconomicsTabProps) {
                 </div>
               )}
 
-              <div className="nums flex flex-wrap gap-x-6 gap-y-1 rounded-lg bg-muted/60 px-3 py-2.5 text-xs text-muted-foreground">
+              <div className="nums flex flex-wrap gap-x-6 gap-y-1 rounded-lg bg-muted/60 px-3 py-2.5 text-label text-muted-foreground">
                 <span>
                   Modelled: <strong className="text-foreground">{num(results.modelledArea)} m²</strong>
                 </span>
@@ -293,10 +293,10 @@ export function EconomicsTab({ inputs, onInput }: EconomicsTabProps) {
               {/* Demoted, deliberately muted speculative scenario. */}
               <div className="flex items-center justify-between gap-3 rounded-lg border border-dashed border-border/70 bg-muted/30 px-3 py-2.5">
                 <div className="grid gap-0.5">
-                  <Label className="text-[0.8rem] text-muted-foreground">
+                  <Label className="text-label text-muted-foreground">
                     Scenario: Renew Adelaide rent-free (speculative)
                   </Label>
-                  <span className="text-xs text-muted-foreground/80">
+                  <span className="text-label text-muted-foreground/80">
                     Zeroes rent only. Outgoings still apply.
                   </span>
                 </div>
@@ -367,7 +367,7 @@ export function EconomicsTab({ inputs, onInput }: EconomicsTabProps) {
               </CardHeader>
               <CardContent>
                 <BreakEvenChart inputs={inputs} results={results} />
-                <p className="nums mt-2 text-xs text-muted-foreground">
+                <p className="nums mt-2 text-label text-muted-foreground">
                   Break-even ≈ <strong className="text-foreground">{num(Math.ceil(results.beCoffees))}</strong>{" "}
                   coffees/day · planned <strong className="text-foreground">{num(inputs.coffeesPerDay)}</strong>{" "}
                   ({percent(results.beCoffees > 0 ? (inputs.coffeesPerDay / results.beCoffees) * 100 - 100 : 0, 0)} headroom).

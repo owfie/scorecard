@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 export default function Page() {
   const [state, dispatch] = React.useReducer(reducer, DEFAULT_STATE);
   const [copied, setCopied] = React.useState(false);
-  const [dark, setDark] = React.useState(false);
+  const [dark, setDark] = React.useState(true);
   // Skip persisting the initial default render — we only want to save real
   // state (post-hydration and user edits), never clobber storage with defaults.
   const skipNextSave = React.useRef(true);
@@ -71,11 +71,8 @@ export default function Page() {
       {/* ── Masthead ──────────────────────────────────────────── */}
       <header className="mb-8 flex flex-col gap-4 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
         <div className="flex flex-col gap-1.5">
-          <span className="text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase">
-            Café venture · Adelaide
-          </span>
-          <h1 className="font-display text-3xl leading-none font-semibold tracking-tight sm:text-4xl">
-            The Back-of-Napkin Model
+          <h1 className="text-3xl leading-none font-medium tracking-tight sm:text-4xl">
+            Scorecard
           </h1>
           <p className="max-w-xl text-sm text-muted-foreground">
             A client-only financial model and weighted location scorecard. Tune

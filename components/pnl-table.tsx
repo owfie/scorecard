@@ -45,7 +45,7 @@ function LedgerRow({
       >
         {label}
         {hint && (
-          <span className="ml-2 text-xs font-normal text-muted-foreground">
+          <span className="ml-2 text-label font-normal text-muted-foreground">
             {hint}
           </span>
         )}
@@ -67,13 +67,13 @@ function LedgerRow({
 
 export function PnlTable({ results }: { results: Results }) {
   return (
-    <Table className="text-sm">
+    <Table className="text-label">
       <TableHeader>
         <TableRow className="border-border hover:bg-transparent">
-          <TableHead className="h-8 text-xs font-medium tracking-wide text-muted-foreground uppercase">
+          <TableHead className="h-8 text-label font-medium tracking-wide text-muted-foreground">
             Annual P&amp;L
           </TableHead>
-          <TableHead className="h-8 text-right text-xs font-medium tracking-wide text-muted-foreground uppercase">
+          <TableHead className="h-8 text-right text-label font-medium tracking-wide text-muted-foreground">
             AUD / yr
           </TableHead>
         </TableRow>
@@ -112,13 +112,13 @@ export function CapexTable({
   results: Results;
 }) {
   return (
-    <Table className="text-sm">
+    <Table className="text-label">
       <TableHeader>
         <TableRow className="border-border hover:bg-transparent">
-          <TableHead className="h-8 text-xs font-medium tracking-wide text-muted-foreground uppercase">
+          <TableHead className="h-8 text-label font-medium tracking-wide text-muted-foreground">
             Capital required
           </TableHead>
-          <TableHead className="h-8 text-right text-xs font-medium tracking-wide text-muted-foreground uppercase">
+          <TableHead className="h-8 text-right text-label font-medium tracking-wide text-muted-foreground">
             AUD
           </TableHead>
         </TableRow>

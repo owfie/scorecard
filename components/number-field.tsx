@@ -66,7 +66,7 @@ export function NumberField({
       <div className="flex items-center gap-1.5">
         <Label
           htmlFor={id}
-          className="text-xs font-medium text-muted-foreground"
+          className="text-label font-medium text-muted-foreground"
         >
           {label}
         </Label>
@@ -106,7 +106,7 @@ export function NumberField({
           )}
         />
         {unit && (
-          <span className="pointer-events-none absolute inset-y-0 right-2.5 flex items-center text-xs font-medium text-muted-foreground">
+          <span className="pointer-events-none absolute inset-y-0 right-2.5 flex items-center text-label font-medium text-muted-foreground">
             {unit}
           </span>
         )}
